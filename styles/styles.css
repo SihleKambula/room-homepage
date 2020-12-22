@@ -1,0 +1,224 @@
+body {
+  font-family: "Spartan", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: minmax(425px, auto);
+  grid-template-areas: "display display display mainContent mainContent" "darkImage about about about lightImage";
+}
+
+.main-section-display {
+  grid-area: display;
+  background: url(../images/desktop-image-hero-1.jpg) no-repeat center/cover;
+}
+
+.main-section-display .navbar {
+  display: flex;
+  justify-content: space-between;
+  width: 350px;
+  margin: 40px 40px;
+}
+
+.main-section-display .navbar .hamburger {
+  display: none;
+}
+
+.main-section-display .navbar .nav-link-container {
+  display: flex;
+  list-style: none;
+}
+
+.main-section-display .navbar .nav-link-container .navlinks {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  line-height: 1rem;
+  color: #f0ecec;
+}
+
+.main-section-display .navbar .nav-link-container .navlinks:hover {
+  cursor: pointer;
+}
+
+.main-section-display .navbar .nav-link-container .navlinks:hover span {
+  background-color: #fff;
+  width: 20px;
+  height: 2px;
+  margin: 5px auto;
+}
+
+.main-section-content {
+  grid-area: mainContent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  position: relative;
+}
+
+.main-section-content .show {
+  display: block;
+}
+
+.main-section-content .hide {
+  display: none;
+}
+
+.main-section-content .content-one,
+.main-section-content .content-two,
+.main-section-content .content-three {
+  margin: 0 90px;
+}
+
+.main-section-content .content-one h3,
+.main-section-content .content-two h3,
+.main-section-content .content-three h3 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  line-height: 2.5rem;
+}
+
+.main-section-content .content-one p,
+.main-section-content .content-two p,
+.main-section-content .content-three p {
+  color: grey;
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+.main-section-content .content-one a,
+.main-section-content .content-two a,
+.main-section-content .content-three a {
+  text-decoration: none;
+  color: #000;
+}
+
+.main-section-content .content-one a span,
+.main-section-content .content-two a span,
+.main-section-content .content-three a span {
+  letter-spacing: 10px;
+  font-size: 0.8rem;
+  margin-right: 20px;
+  line-height: 2rem;
+}
+
+.main-section-content .content-one a:hover,
+.main-section-content .content-two a:hover,
+.main-section-content .content-three a:hover {
+  opacity: 0.5;
+}
+
+.main-section-content .navigator {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.main-section-content .navigator button {
+  padding: 20px 20px;
+  width: 85px;
+  border: none;
+  background-color: #000;
+}
+
+.main-section-content .navigator button:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.main-section-content .navigator button img {
+  opacity: 0.7;
+}
+
+.display-image-dark {
+  grid-area: darkImage;
+}
+
+.about {
+  grid-area: about;
+  padding: 60px 40px;
+}
+
+.about h4 {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 0.8rem;
+  margin-bottom: 20px;
+}
+
+.about p {
+  color: grey;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+.display-image-light {
+  grid-area: lightImage;
+}
+
+@media screen and (max-width: 670px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "display" "mainContent" "darkImage" "about" "lightImage";
+  }
+  .main-section-display {
+    grid-area: display;
+    background: url(../images/mobile-image-hero-1.jpg) no-repeat center/cover;
+  }
+  .main-section-display .navbar {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .main-section-display .navbar .hamburger {
+    display: block;
+  }
+  .main-section-display .navbar .hide-logo {
+    display: none;
+  }
+  .main-section-display .navbar .logo {
+    margin-right: 120px;
+  }
+  .main-section-display .navbar .nav-link-container {
+    display: none;
+  }
+  .main-section-display .navbar .nav-link-container .navlinks {
+    color: #000;
+  }
+  .main-section-display .navbar .show-menu {
+    background-color: #fff;
+    height: 100px;
+    margin: 0;
+    padding: 40px 30px;
+  }
+  .main-section-display .navbar .show-menu .nav-link-container {
+    display: block;
+  }
+  .main-section-content {
+    position: static;
+  }
+  .main-section-content .content-one,
+  .main-section-content .content-two,
+  .main-section-content .content-three {
+    margin: 50px 30px;
+  }
+  .main-section-content .navigator {
+    bottom: 218px;
+    left: 270px;
+  }
+  .display-image-dark img {
+    min-width: 440px;
+    max-width: 100%;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
